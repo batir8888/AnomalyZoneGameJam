@@ -8,8 +8,10 @@ using UnityEngine.VFX;
 public class VacuumMachine : MonoBehaviour
 {
     private Collider[] _colliders;
+    private Transform _closestArtifact;
     private GameObject _gameObjectToDestroy;
     private VisualEffect _vfx;
+    private CompasUI _compasUI;
 
     [SerializeField] private float force;
     [SerializeField] private float maxAngleToAttract;
@@ -20,6 +22,7 @@ public class VacuumMachine : MonoBehaviour
     private void Awake()
     {
         _colliders = new Collider[4];
+        _compasUI = GetComponentInChildren<CompasUI>();
     }
 
     private void Start()
@@ -29,6 +32,7 @@ public class VacuumMachine : MonoBehaviour
     
     private void Update()
     {
+        CheckArtifacts();
         if (Input.GetMouseButtonDown(0))
         {
             _vfx.Play();
@@ -47,11 +51,18 @@ public class VacuumMachine : MonoBehaviour
 
     private void CheckArtifacts()
     {
+        var distance = float.MaxValue;
         Physics.OverlapSphereNonAlloc(attractor.position, attractorRadius, _colliders, LayerMask.GetMask("Artifact"));
+        foreach (var collider in _colliders)
+        {
+            if (!collider) continue;
+            var newDistance = Vector3.Distance(attractor.position, collider.transform.position);
+            if (newDistance <= distance) _closestArtifact = collider.transform;
+        }
+        _compasUI.target = _closestArtifact;
     }
     private void Attract()
     {
-        CheckArtifacts();
         foreach (var collider in _colliders)
         {
             if (!collider) continue;
