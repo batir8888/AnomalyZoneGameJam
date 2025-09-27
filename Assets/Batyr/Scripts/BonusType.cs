@@ -1,0 +1,1 @@
+public enum BonusType { Strength, Agility, Vitality, Intelligence, Luck }
