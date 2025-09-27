@@ -84,6 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1824735849656855642}
+  - component: {fileID: 4804181965517200836}
   m_Layer: 0
   m_Name: Timer
   m_TagString: Untagged
@@ -112,6 +113,21 @@ RectTransform:
   m_AnchoredPosition: {x: 781, y: -22}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4804181965517200836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947868189368537143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0ebfb0b99ab63e458c7591b162f5746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tmpro: {fileID: 2768106437013798294}
+  timeRemaining: 12
+  timerIsRunning: 0
 --- !u!1 &1027441922272244402
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,6 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8770801745081234377}
+  - component: {fileID: 9012818978668889777}
   m_Layer: 0
   m_Name: TankHolder
   m_TagString: Untagged
@@ -149,6 +166,20 @@ RectTransform:
   m_AnchoredPosition: {x: -496, y: -142}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &9012818978668889777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027441922272244402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf4428945ae7c64096aa94da0ec6bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 6547323407843616193}
+  value: 50
 --- !u!1 &1573182962907405715
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,9 +488,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 1
+  m_MaxValue: 100
+  m_WholeNumbers: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -510,6 +541,7 @@ GameObject:
   - component: {fileID: 7762253305203934531}
   - component: {fileID: 7081806180197510057}
   - component: {fileID: 670629158127117213}
+  - component: {fileID: 2320499153369471958}
   m_Layer: 0
   m_Name: Image (2)
   m_TagString: Untagged
@@ -574,6 +606,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2320499153369471958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5182666916000802717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c4399d96417a1b4596bebfbae1e5f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
 --- !u!1 &5810309732274782510
 GameObject:
   m_ObjectHideFlags: 0
