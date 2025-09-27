@@ -1,17 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CompasUI : MonoBehaviour
 {
-
-    [SerializeField] Transform Target;
-    Vector3 dir;
+    public Transform target;
+    
+    private Vector3 _dir;
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        dir.z= Target.eulerAngles.y;
-        transform.localEulerAngles = dir;
+        if (!target) return;
+        _dir.z = target.eulerAngles.y;
+        transform.localEulerAngles = _dir;
     }
 }
