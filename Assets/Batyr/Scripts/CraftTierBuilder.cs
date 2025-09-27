@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -17,25 +16,15 @@ public static class CraftTierBuilder
             for (int b = a; b < nPrev; b++)
                 pairs.Add(new Pair{ A = a, B = b });
 
-        // 2) Детерминированный хеш и сортировка
-        uint H(int a, int b)
-        {
-            unchecked
-            {
-                uint x = (uint)(a * 73856093) ^ (uint)(b * 19349663) ^ (uint)seed;
-                x ^= x << 13; x ^= x >> 17; x ^= x << 5; // xorshift
-                return x;
-            }
-        }
         pairs = pairs.OrderBy(p => H(p.A, p.B)).ToList();
 
         // 3) Вместимость корзин
-        int R = pairs.Count;
-        int q = (R + nTarget - 1) / nTarget; // ceil
+        int r = pairs.Count;
+        int q = (r + nTarget - 1) / nTarget; // ceil
 
         // 4) Раскладываем по корзинам
         var load = new int[nTarget];
-        var map = new Dictionary<(int,int), int>(R);
+        var map = new Dictionary<(int,int), int>(r);
         int bin = 0;
         foreach (var p in pairs)
         {
@@ -53,6 +42,17 @@ public static class CraftTierBuilder
             bin = (bin + 1) % nTarget;
         }
         return map; // (i,j)->resultId
+
+        // 2) Детерминированный хеш и сортировка
+        uint H(int a, int b)
+        {
+            unchecked
+            {
+                var x = (uint)(a * 73856093) ^ (uint)(b * 19349663) ^ (uint)seed;
+                x ^= x << 13; x ^= x >> 17; x ^= x << 5; // xorshift
+                return x;
+            }
+        }
     }
 
     // Роллим бонусы стабильно для экземпляра результата
