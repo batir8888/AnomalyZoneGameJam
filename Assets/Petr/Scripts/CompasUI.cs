@@ -5,13 +5,13 @@ using UnityEngine;
 public class CompasUI : MonoBehaviour
 {
 
-    [SerializeField] GameObject Target;
+    [SerializeField] Transform Target;
     Vector3 dir;
 
     // Update is called once per frame
     void Update()
     {
-        dir.z= Target.transform.eulerAngles.y;
+        dir.z= Target.eulerAngles.y;
         transform.localEulerAngles = dir;
     }
 }
