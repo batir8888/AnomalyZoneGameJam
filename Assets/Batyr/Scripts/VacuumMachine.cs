@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Batyr.Scripts;
 using UnityEngine;
 using UnityEngine.VFX;
@@ -51,15 +48,17 @@ public class VacuumMachine : MonoBehaviour
 
     private void CheckArtifacts()
     {
-        var distance = float.MaxValue;
+        float distance = float.MaxValue;
         Physics.OverlapSphereNonAlloc(attractor.position, attractorRadius, _colliders, LayerMask.GetMask("Artifact"));
+        if (_colliders[0]) distance = _colliders[0].transform.position.sqrMagnitude;
         foreach (var collider in _colliders)
         {
             if (!collider) continue;
-            var newDistance = Vector3.Distance(attractor.position, collider.transform.position);
-            if (newDistance <= distance) _closestArtifact = collider.transform;
+            var newDistance = Vector3.SqrMagnitude(collider.transform.position - attractor.position);
+            Debug.Log(newDistance);
+            if (newDistance < distance) _closestArtifact = collider.transform;
         }
-        _compasUI.target = _closestArtifact;
+        if (_closestArtifact) _compasUI.SetAngle(-Vector3.SignedAngle(attractor.forward, _closestArtifact.position - attractor.position, Vector3.up));
     }
     private void Attract()
     {
