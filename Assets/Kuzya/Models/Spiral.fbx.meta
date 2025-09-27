@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3fc267cdfd2597947b2f6f5f642293e3
+guid: 0260765312ae7ff468c12f0c8a157f6d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,23 +7,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: MAT_potato
-    second: {fileID: 2100000, guid: ea25da72abbd37444addaf69e3dc0270, type: 2}
+      name: MAT_spiral
+    second: {fileID: 2100000, guid: 08eb5ce5983ed694ea1ef2e4d483d41a, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: T_potato_albedo
-    second: {fileID: 2800000, guid: 4227c19983d617f4d9334a605ece76f3, type: 3}
+      name: T_spiral_albedo
+    second: {fileID: 2800000, guid: 3df7d1d15d4020b499c0ad7b28a1e8d3, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: T_potato_diffuce
-    second: {fileID: 2800000, guid: d612660ff906b4e4b8f31c3a8a96c48a, type: 3}
+      name: T_spiral_diffuce
+    second: {fileID: 2800000, guid: 9cb7caeeab3289b4c8a20dfc1a853909, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: T_potato_normal
-    second: {fileID: 2800000, guid: 6ac60919ad77f7f478bce9c9ed5375d9, type: 3}
+      name: T_spiral_normal
+    second: {fileID: 2800000, guid: 9a9fe37acd2074a44884848346ed3c10, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -55,7 +55,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 2
+    globalScale: 1
     meshCompression: 2
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -110,7 +110,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 2
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
