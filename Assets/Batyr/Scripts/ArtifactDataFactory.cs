@@ -2,10 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-// ===== ДАННЫЕ =====
-
-// ===== ФАБРИКА =====
-public static class ArtifactFactory
+public static class ArtifactDataFactory
 {
     // Tier1: 5 фиксированных
     public static List<ArtifactData> BuildTier1()

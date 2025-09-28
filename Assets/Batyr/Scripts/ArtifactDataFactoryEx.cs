@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class ArtifactFactoryEx
+public static class ArtifactDataFactoryEx
 {
     // Tier 5: всегда 3 квестовых. nPrev = кол-во артов Tier 4
     public static List<ArtifactData> BuildTier5(int nPrev, int seed)
