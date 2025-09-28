@@ -32,6 +32,37 @@ Transform:
   - {fileID: 7217185162786073930}
   m_Father: {fileID: 7707756603024200576}
   m_LocalEulerAnglesHint: {x: 65, y: 0, z: 0}
+--- !u!1 &6029856122044226179
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5680940411400493871}
+  m_Layer: 6
+  m_Name: Attractor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5680940411400493871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6029856122044226179}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7707756603024200576}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &527507413980262022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90,6 +121,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6759432928864660390, guid: f7d637ade97e9ac44bc48b6b20e7af1b,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7156658491466288163, guid: f7d637ade97e9ac44bc48b6b20e7af1b,
         type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.size
@@ -128,7 +164,7 @@ PrefabInstance:
     - target: {fileID: 7156658491466288163, guid: f7d637ade97e9ac44bc48b6b20e7af1b,
         type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[2].m_Value
-      value: 0.5
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 7156658491466288163, guid: f7d637ade97e9ac44bc48b6b20e7af1b,
         type: 3}
@@ -157,13 +193,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7156658491466288163, guid: f7d637ade97e9ac44bc48b6b20e7af1b,
         type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.z
+      value: -1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156658491466288163, guid: f7d637ade97e9ac44bc48b6b20e7af1b,
+        type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Value.x
       value: 17.42
       objectReference: {fileID: 0}
     - target: {fileID: 7156658491466288163, guid: f7d637ade97e9ac44bc48b6b20e7af1b,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Overridden
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7414230317416511351, guid: f7d637ade97e9ac44bc48b6b20e7af1b,
         type: 3}
@@ -564,6 +605,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: cde6e2e4ae8570f49bc69d920580646d,
         type: 3}
       insertIndex: -1
+      addedObject: {fileID: 5680940411400493871}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: cde6e2e4ae8570f49bc69d920580646d,
+        type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1873691412721135638}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: cde6e2e4ae8570f49bc69d920580646d,
         type: 3}
@@ -593,6 +638,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed17de57a51334349a7f1161a11493dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  force: 4
+  maxAngleToAttract: 45
+  attractorRadius: 4
+  radiusToTake: 1
+  attractor: {fileID: 5680940411400493871}
 --- !u!4 &7707756603024200576 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cde6e2e4ae8570f49bc69d920580646d,
