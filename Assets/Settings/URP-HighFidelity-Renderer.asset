@@ -18,10 +18,10 @@ MonoBehaviour:
     Downsample: 0
     AfterOpaque: 0
     Source: 1
-    NormalSamples: 1
-    Intensity: 0.5
-    DirectLightingStrength: 0.25
-    Radius: 0.25
+    NormalSamples: 2
+    Intensity: 1
+    DirectLightingStrength: 0.5
+    Radius: 1
     Samples: 0
     BlurQuality: 0
     Falloff: 100
@@ -98,8 +98,8 @@ MonoBehaviour:
     passOperation: 2
     failOperation: 0
     zFailOperation: 0
-  m_ShadowTransparentReceive: 1
-  m_RenderingMode: 2
+  m_ShadowTransparentReceive: 0
+  m_RenderingMode: 0
   m_DepthPrimingMode: 0
   m_CopyDepthMode: 0
   m_AccurateGbufferNormals: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Active: 1
   settings:
     passTag: PilesosShow
-    Event: 300
+    Event: 250
     filterSettings:
       RenderQueueType: 0
       LayerMask:
