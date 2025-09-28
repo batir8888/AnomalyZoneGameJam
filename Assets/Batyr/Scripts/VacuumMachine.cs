@@ -55,7 +55,6 @@ public class VacuumMachine : MonoBehaviour
         {
             if (!collider) continue;
             var newDistance = Vector3.SqrMagnitude(collider.transform.position - attractor.position);
-            Debug.Log(newDistance);
             if (newDistance < distance) _closestArtifact = collider.transform;
         }
         if (_closestArtifact) _compasUI.SetAngle(-Vector3.SignedAngle(attractor.forward, _closestArtifact.position - attractor.position, Vector3.up));
