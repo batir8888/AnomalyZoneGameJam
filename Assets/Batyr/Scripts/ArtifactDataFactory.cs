@@ -26,7 +26,7 @@ public static class ArtifactDataFactory
                 Select = defs[i].sel,
                 Color = defs[i].col,
                 Bonus = (BonusType)(i % Enum.GetNames(typeof(BonusType)).Length),
-                BonusValue = 1 // базовый минимум; при желании рулить отдельно
+                BonusValue = 5 // базовый минимум; при желании рулить отдельно
             });
         }
         return list;
