@@ -1,82 +1,121 @@
 using Batyr.Scripts;
 using UnityEngine;
 using UnityEngine.VFX;
+using System.Collections.Generic;
 
 public class VacuumMachine : MonoBehaviour
 {
-    private Collider[] _colliders;
-    private Transform _closestArtifact;
-    private GameObject _gameObjectToDestroy;
+    // Кэшированные компоненты
     private VisualEffect _vfx;
-    private CompasUI _compasUI;
+    private CompasUI _compassUI;
 
-    [SerializeField] private float force;
-    [SerializeField] private float maxAngleToAttract;
-    [SerializeField] private float attractorRadius;
-    [SerializeField] private float radiusToTake;
+    // Настройки из инспектора
+    [Header("Settings")]
+    [SerializeField] private float force = 10f;
+    [SerializeField] private float maxAngleToAttract = 45f;
+    [SerializeField] private float attractorRadius = 5f;
+    [SerializeField] private float radiusToTake = 1f;
     [SerializeField] private Transform attractor;
+
+    // Временные данные
+    private List<Collider> _nearbyArtifacts = new();
+    private Transform _closestArtifact;
 
     private void Awake()
     {
-        _colliders = new Collider[4];
-        _compasUI = GetComponentInChildren<CompasUI>();
+        _compassUI = GetComponentInChildren<CompasUI>();
     }
 
     private void Start()
     {
-        _vfx = GetComponentInChildren<MagnetVfx>().Vfx;
+        var magnetVfx = GetComponentInChildren<MagnetVfx>();
+        if (magnetVfx != null)
+        {
+            _vfx = magnetVfx.Vfx;
+        }
+        else
+        {
+            Debug.LogWarning("MagnetVfx component not found on child.", gameObject);
+        }
     }
-    
+
     private void Update()
     {
-        CheckArtifacts();
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && _vfx != null)
         {
             _vfx.Play();
         }
-        
         else if (Input.GetMouseButton(0))
         {
-            Attract();
+            AttractArtifacts();
         }
-        
-        else if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButtonUp(0) && _vfx != null)
         {
             _vfx.Stop();
         }
     }
 
-    private void CheckArtifacts()
+    private void AttractArtifacts()
     {
-        float distance = float.MaxValue;
-        Physics.OverlapSphereNonAlloc(attractor.position, attractorRadius, _colliders, LayerMask.GetMask("Artifact"));
-        if (_colliders[0]) distance = _colliders[0].transform.position.sqrMagnitude;
-        foreach (var collider in _colliders)
+        FindNearbyArtifacts();
+        UpdateClosestArtifact();
+
+        foreach (var collider in _nearbyArtifacts)
         {
             if (!collider) continue;
-            var newDistance = Vector3.SqrMagnitude(collider.transform.position - attractor.position);
-            if (newDistance < distance) _closestArtifact = collider.transform;
-        }
-        if (_closestArtifact) _compasUI.SetAngle(-Vector3.SignedAngle(attractor.forward, _closestArtifact.position - attractor.position, Vector3.up));
-    }
-    private void Attract()
-    {
-        foreach (var collider in _colliders)
-        {
-            if (!collider) continue;
-            if (Vector3.Angle(attractor.forward, collider.transform.position - transform.position) < maxAngleToAttract)
+
+            var artifactTransform = collider.transform;
+            var direction = artifactTransform.position - attractor.position;
+
+            if (Vector3.Angle(attractor.forward, direction) > maxAngleToAttract) continue;
+
+            var artifact = collider.GetComponent<Artifact>();
+            if (artifact)
             {
-                collider.GetComponent<Artifact>().BeAttracted(attractor.position, force * Time.deltaTime);
+                artifact.BeAttracted(attractor.position, force * Time.deltaTime);
             }
-            if (Vector3.Distance(attractor.position, collider.transform.position) < radiusToTake) _gameObjectToDestroy = collider.gameObject;
-            // if (collider.transform.position != default)
-            //     Debug.Log($"{collider.name} {Vector3.Angle(transform.forward, collider.transform.position - transform.position)}");
+
+            if (direction.magnitude < radiusToTake)
+            {
+                Destroy(collider.gameObject);
+            }
         }
-        if (_gameObjectToDestroy) Destroy(_gameObjectToDestroy);
+    }
+
+    private void FindNearbyArtifacts()
+    {
+        _nearbyArtifacts.Clear();
+        var colliders = Physics.OverlapSphere(attractor.position, attractorRadius, LayerMask.GetMask("Artifact"));
+        foreach (var c in colliders)
+        {
+            if (c) _nearbyArtifacts.Add(c);
+        }
+    }
+
+    private void UpdateClosestArtifact()
+    {
+        float closestDistance = float.MaxValue;
+        _closestArtifact = null;
+
+        foreach (var collider in _nearbyArtifacts)
+        {
+            if (!collider) continue;
+
+            var distance = Vector3.SqrMagnitude(collider.transform.position - attractor.position);
+            if (!(distance < closestDistance)) continue;
+            closestDistance = distance;
+            _closestArtifact = collider.transform;
+        }
+
+        if (!_closestArtifact || !_compassUI) return;
+        var angle = -Vector3.SignedAngle(attractor.forward, _closestArtifact.position - attractor.position, Vector3.up);
+        _compassUI.SetAngle(angle);
     }
 
     private void OnDrawGizmos()
     {
+        if (!attractor) return;
+        Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(attractor.position, attractorRadius);
     }
 }
