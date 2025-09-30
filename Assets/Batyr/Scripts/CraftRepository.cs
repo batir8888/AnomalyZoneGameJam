@@ -6,7 +6,7 @@ namespace Batyr.Scripts
     {
         public int Seed = SaveLoadSystem.Instance.Load<int>("seed");
 
-        public List<List<ArtifactData>> Crafts = new()
+        public List<List<ArtifactData>> Artifacts = new()
         {
             SaveLoadSystem.Instance.Load<List<ArtifactData>>("tierOne"),
             SaveLoadSystem.Instance.Load<List<ArtifactData>>("tierTwo"),
@@ -15,6 +15,13 @@ namespace Batyr.Scripts
             SaveLoadSystem.Instance.Load<List<ArtifactData>>("tierFive")
         };
 
+        public List<TierMapping> Crafts = new()
+        {
+            SaveLoadSystem.Instance.Load<TierMapping>("mapTierTwo"),
+            SaveLoadSystem.Instance.Load<TierMapping>("mapTierThree"),
+            SaveLoadSystem.Instance.Load<TierMapping>("mapTierFour"),
+            SaveLoadSystem.Instance.Load<TierMapping>("mapTierFive")
+        };
     }
     
     
