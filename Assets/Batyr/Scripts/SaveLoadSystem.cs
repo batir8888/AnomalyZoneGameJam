@@ -8,10 +8,14 @@ namespace Batyr.Scripts
     {
         public void Save<T>(T data, string fileName)
         {
-            string json = JsonConvert.SerializeObject(data, Formatting.Indented);
+            var settings = new JsonSerializerSettings();
+            settings.Converters.Add(new ColorConverter());
+            
+            string json = JsonConvert.SerializeObject(data, settings);
 
             string path = GetSavePath(fileName);
             File.WriteAllText(path, json);
+            Debug.Log($"Saved by path: {path}");
         }
 
         // Загрузка данных любого типа
@@ -26,7 +30,7 @@ namespace Batyr.Scripts
             }
 
             Debug.LogWarning("Save file not found in " + path);
-            return default(T); // null для ссылочных типов, 0 для чисел и т.д.
+            return default; // null для ссылочных типов, 0 для чисел и т.д.
         }
 
         // Вспомогательный метод для получения пути к файлу
