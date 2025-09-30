@@ -9,7 +9,7 @@ public static class ArtifactDataFactoryEx
     {
         const int tier = 5;
         const int nTarget = 3;
-        var map = CraftTierBuilder.BuildTierMap(nPrev, nTarget, seed);
+        _ = CraftTierBuilder.BuildTierMap(nPrev, nTarget, seed);
 
         var list = new List<ArtifactData>(nTarget);
         for (int resultId = 0; resultId < nTarget; resultId++)
