@@ -15,7 +15,6 @@ Material:
   - _DETAIL_MULX2
   - _NORMALMAP
   - _OCCLUSIONMAP
-  - _PARALLAXMAP
   - _RECEIVE_SHADOWS_OFF
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -31,7 +30,7 @@ Material:
     m_TexEnvs:
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: 6a3347b9c4a4179498eab53904bc44fd, type: 3}
-        m_Scale: {x: 0.23, y: 0.27}
+        m_Scale: {x: 0.3, y: 0.3}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: c50232f739b99e948b53641f872e4d86, type: 3}
@@ -55,7 +54,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 6a3347b9c4a4179498eab53904bc44fd, type: 3}
-        m_Scale: {x: 0.23, y: 0.27}
+        m_Scale: {x: 0.3, y: 0.3}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -66,7 +65,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: ca08b18b2e5048e49968de6a172993d1, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
