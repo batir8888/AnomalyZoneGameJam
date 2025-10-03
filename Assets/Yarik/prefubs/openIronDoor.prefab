@@ -10,6 +10,21 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 015b1ee266a16ed4d9f5e04e3543da37,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 015b1ee266a16ed4d9f5e04e3543da37,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 015b1ee266a16ed4d9f5e04e3543da37,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 015b1ee266a16ed4d9f5e04e3543da37,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.75
       objectReference: {fileID: 0}
@@ -63,6 +78,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: bf960c5875875524998a860bd9a9a9cf, type: 2}
+    - target: {fileID: -4507900262165122138, guid: 015b1ee266a16ed4d9f5e04e3543da37,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -3355057474626327757, guid: 015b1ee266a16ed4d9f5e04e3543da37,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 302961267064980505, guid: 015b1ee266a16ed4d9f5e04e3543da37,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -112,6 +137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: openIronDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 015b1ee266a16ed4d9f5e04e3543da37,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
