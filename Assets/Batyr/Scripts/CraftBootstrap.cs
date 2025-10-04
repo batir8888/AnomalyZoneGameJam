@@ -9,6 +9,7 @@ namespace Batyr.Scripts
     public class CraftBootstrap : Singleton<CraftBootstrap>
     {
         private CraftRepository _repository;
+
         private void Start()
         {
             var seed = (int)DateTime.Now.Ticks;
