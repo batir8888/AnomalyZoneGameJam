@@ -8,6 +8,7 @@ public class VacuumMachine : MonoBehaviour
     // Кэшированные компоненты
     private VisualEffect _vfx;
     private CompasUI _compassUI;
+    private Light _light;
 
     // Настройки из инспектора
     [Header("Settings")]
@@ -24,6 +25,7 @@ public class VacuumMachine : MonoBehaviour
     private void Awake()
     {
         _compassUI = GetComponentInChildren<CompasUI>();
+        _light = GetComponentInChildren<Light>();
     }
 
     private void Start()
@@ -41,17 +43,19 @@ public class VacuumMachine : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && _vfx != null)
+        if (Input.GetMouseButtonDown(0) && _vfx)
         {
             _vfx.Play();
+            _light.intensity = 3f;
         }
         else if (Input.GetMouseButton(0))
         {
             AttractArtifacts();
         }
-        else if (Input.GetMouseButtonUp(0) && _vfx != null)
+        else if (Input.GetMouseButtonUp(0) && _vfx)
         {
             _vfx.Stop();
+            _light.intensity = 0f;
         }
     }
 
