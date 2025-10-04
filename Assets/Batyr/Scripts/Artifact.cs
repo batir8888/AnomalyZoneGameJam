@@ -7,12 +7,17 @@ namespace Batyr.Scripts
     {
         private Rigidbody _rb;
         
-        [SerializeField] private ArtifactData data;
+        [field:SerializeField] public ArtifactData Data { get; private set; }
 
         private void Awake()
         {
             gameObject.layer = LayerMask.NameToLayer("Artifact");
             _rb = GetComponent<Rigidbody>();
+        }
+
+        public void TakeToInventory()
+        {
+            Inventory.Instance.artifacts.Add(Data);
         }
 
         public void BeAttracted(Vector3 to, float force)
