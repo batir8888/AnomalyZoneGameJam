@@ -281,10 +281,10 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 1.8
-  m_Radius: 0.5
+  m_Radius: 0.35
   m_SlopeLimit: 45
-  m_StepOffset: 0.25
-  m_SkinWidth: 0.08
+  m_StepOffset: 0.4
+  m_SkinWidth: 0.01
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0.93, z: 0}
 --- !u!114 &9078402433757939684
@@ -299,8 +299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55919ac34a26952479f3fc91f777b2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 4
-  SprintSpeed: 6
+  MoveSpeed: 5
+  SprintSpeed: 6.5
   RotationSpeed: 2.5
   SpeedChangeRate: 10
   JumpHeight: 1
@@ -309,7 +309,7 @@ MonoBehaviour:
   FallTimeout: 0.15
   Grounded: 1
   GroundedOffset: -0.14
-  GroundedRadius: 0.5
+  GroundedRadius: 0.3
   GroundLayers:
     serializedVersion: 2
     m_Bits: 1
@@ -649,8 +649,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395323, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
+      propertyPath: m_Lens.FarClipPlane
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8762286023885395323, guid: 9c489a8547f4d9e4387da15a4ff82c81,
+        type: 3}
       propertyPath: m_Lens.NearClipPlane
-      value: 0.1
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8762286024517199034, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
@@ -799,6 +804,11 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 206ee9b3d4b88bd46b380948cc348d37,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 206ee9b3d4b88bd46b380948cc348d37,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 206ee9b3d4b88bd46b380948cc348d37,
