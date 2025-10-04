@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 version https://git-lfs.github.com/spec/v1
 oid sha256:ec6ab2d9e38290113e795c1b86735b64fe6d775200a3ef9092e9a745ad6b3bf0
 size 26630
@@ -949,3 +950,8 @@ RectTransform:
   m_SizeDelta: {x: 128, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 >>>>>>> origin/main
+=======
+version https://git-lfs.github.com/spec/v1
+oid sha256:d51785c13903c89912a4e364ef7173c6caa54f34ef83487370a6b3bf2912bcd6
+size 3566
+>>>>>>> origin/Petr
