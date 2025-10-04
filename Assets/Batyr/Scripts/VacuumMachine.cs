@@ -81,7 +81,8 @@ public class VacuumMachine : MonoBehaviour
 
             if (direction.magnitude < radiusToTake)
             {
-                Destroy(collider.gameObject);
+                artifact.TakeToInventory();
+                collider.gameObject.SetActive(false);
             }
         }
     }
@@ -101,14 +102,14 @@ public class VacuumMachine : MonoBehaviour
         float closestDistance = float.MaxValue;
         _closestArtifact = null;
 
-        foreach (var collider in _nearbyArtifacts)
+        foreach (var col in _nearbyArtifacts)
         {
-            if (!collider) continue;
+            if (!col) continue;
 
-            var distance = Vector3.SqrMagnitude(collider.transform.position - attractor.position);
+            var distance = Vector3.SqrMagnitude(col.transform.position - attractor.position);
             if (!(distance < closestDistance)) continue;
             closestDistance = distance;
-            _closestArtifact = collider.transform;
+            _closestArtifact = col.transform;
         }
 
         if (!_closestArtifact || !_compassUI) return;
