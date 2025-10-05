@@ -23,7 +23,7 @@ namespace Batyr.Scripts
             SaveLoadSystem.Instance.Save(tierThree, "tierThree");
             var tierFour = ArtifactDataFactory.BuildTierK(4, 8, 5, seed, 5);
             SaveLoadSystem.Instance.Save(tierFour, "tierFour");
-            var tierFive = ArtifactDataFactoryEx.BuildTier5(5, seed);
+            var tierFive = ArtifactDataFactory.BuildTier5(5, seed);
             SaveLoadSystem.Instance.Save(tierFive, "tierFive");
 
             var mapTierTwo = CraftTierBuilder.BuildTierMap(5, 15, seed);
@@ -32,7 +32,7 @@ namespace Batyr.Scripts
             SaveLoadSystem.Instance.Save(mapTierThree, "mapTierThree");
             var mapTierFour = CraftTierBuilder.BuildTierMap(8, 5, seed);
             SaveLoadSystem.Instance.Save(mapTierFour, "mapTierFour");
-            var mapTierFive = CraftTierBuilder.BuildTierMap(15, 8, seed);
+            var mapTierFive = CraftTierBuilder.BuildTierMap(5, 3, seed);
             SaveLoadSystem.Instance.Save(mapTierFive, "mapTierFive");
             
             _repository = new CraftRepository();
@@ -55,7 +55,7 @@ namespace Batyr.Scripts
 
         public TierMapping GetTiers(int tier)
         {
-            return _repository.Crafts[tier - 2];
+            return _repository.Crafts[tier - 1];
         }
     }
 

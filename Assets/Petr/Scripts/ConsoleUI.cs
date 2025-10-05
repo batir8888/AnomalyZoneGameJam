@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ConsoleUI : MonoBehaviour
@@ -24,10 +22,6 @@ public class ConsoleUI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void OpenList()
     {

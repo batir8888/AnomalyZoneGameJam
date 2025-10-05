@@ -27,7 +27,9 @@ public static class ArtifactDataFactory
                 Select = defs[i].sel,
                 Color = defs[i].col,
                 Bonus = (BonusType)(i % Enum.GetNames(typeof(BonusType)).Length),
-                BonusValue = 5
+                BonusValue = 5,
+                CanBeCombined = true,
+                IsQuest = false
             });
         }
         return list;
@@ -71,7 +73,9 @@ public static class ArtifactDataFactory
                 Select = (SelectId)resultId,
                 Color = color,
                 Bonus = bonusType,
-                BonusValue = bonusVal
+                BonusValue = bonusVal,
+                IsQuest = false,
+                CanBeCombined = true
             };
             list.Add(data);
         }
