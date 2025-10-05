@@ -690,7 +690,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6411015647027302652
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2097,9 +2097,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 6368337435807913073}
   panelSettings: {fileID: 2224111308254190944}
-  countVFX: {fileID: 7274259257636822280}
   countMusic: {fileID: 2082133741551611988}
   countMaster: {fileID: 1012918447498801165}
+  audioMixer: {fileID: 24100000, guid: b34c8133e1a805746b0e1777d6db93cd, type: 2}
 --- !u!1 &4013280136008558062
 GameObject:
   m_ObjectHideFlags: 0
@@ -2126,7 +2126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4013280136008558062}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.4491997, y: -0, z: -0, w: 0.89343137}
+  m_LocalRotation: {x: -0.44920203, y: 0, z: 0, w: 0.89343023}
   m_LocalPosition: {x: -0.716, y: 1.006, z: -1.387}
   m_LocalScale: {x: -5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
@@ -2889,7 +2889,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[Master]
+  m_text: '[SFX]
 
 '
   m_isRightToLeft: 0
