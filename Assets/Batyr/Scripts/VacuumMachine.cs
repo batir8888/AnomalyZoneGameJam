@@ -2,9 +2,8 @@ using Batyr.Scripts;
 using UnityEngine;
 using UnityEngine.VFX;
 using System.Collections.Generic;
-using StarterAssets;
-using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
 public class VacuumMachine : MonoBehaviour
 {
     // Кэшированные компоненты
@@ -12,6 +11,7 @@ public class VacuumMachine : MonoBehaviour
     private CompasUI _compassUI;
     private Light _light;
     private TankUI _slider;
+    private AudioSource _audioSource;
 
     // Настройки из инспектора
     [Header("Settings")]
@@ -20,6 +20,7 @@ public class VacuumMachine : MonoBehaviour
     [SerializeField] private float attractorRadius = 5f;
     [SerializeField] private float radiusToTake = 1f;
     [SerializeField] private Transform attractor;
+    [SerializeField] private AudioClip magnetSfx;
 
     // Временные данные
     private List<Collider> _nearbyArtifacts = new();
@@ -27,9 +28,11 @@ public class VacuumMachine : MonoBehaviour
 
     private void Awake()
     {
+        _audioSource = GetComponent<AudioSource>();
         _compassUI = GetComponentInChildren<CompasUI>();
         _light = GetComponentInChildren<Light>();
         _slider = GetComponentInChildren<TankUI>();
+        _audioSource.clip = magnetSfx;
     }
 
     private void Start()
@@ -48,8 +51,10 @@ public class VacuumMachine : MonoBehaviour
 
     private void Update()
     {
+        UpdateClosestArtifact();
         if (Input.GetMouseButtonDown(0) && _vfx)
         {
+            _audioSource.Play();
             _vfx.Play();
             _light.intensity = 3f;
         }
@@ -59,6 +64,7 @@ public class VacuumMachine : MonoBehaviour
         }
         else if (Input.GetMouseButtonUp(0) && _vfx)
         {
+            _audioSource.Stop();
             _vfx.Stop();
             _light.intensity = 0f;
         }

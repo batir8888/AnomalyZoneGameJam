@@ -684,10 +684,20 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3766845607562094417, guid: 11f7f892b732ff546877bf2e52a41801,
+        type: 3}
+      propertyPath: MinDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7042683582642227514, guid: 11f7f892b732ff546877bf2e52a41801,
         type: 3}
       propertyPath: m_Name
       value: Pribluda
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159079551770953321, guid: 11f7f892b732ff546877bf2e52a41801,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7707756603024200576, guid: 11f7f892b732ff546877bf2e52a41801,
         type: 3}
@@ -738,6 +748,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875760422170525292, guid: 11f7f892b732ff546877bf2e52a41801,
+        type: 3}
+      propertyPath: timeRemaining
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

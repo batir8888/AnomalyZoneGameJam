@@ -10,7 +10,7 @@ public class Door : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Проверяем, что вошедший объект — это игрок
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         if (other.CompareTag("Player"))
         {
             playerInside = true;
@@ -27,11 +27,12 @@ public class Door : MonoBehaviour
 
     private void Update()
     {
-        // Если игрок внутри и нажата клавиша E
+        // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ E
         if (playerInside && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Успех! Клавиша E нажата в триггерной зоне.");
-            SceneManager.LoadScene("MainScene1");
+            Debug.Log("пїЅпїЅпїЅпїЅпїЅ! пїЅпїЅпїЅпїЅпїЅпїЅпїЅ E пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ.");
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Hub")) SceneManager.LoadScene("MainScene1");
+            else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("MainScene1")) SceneManager.LoadScene("Hub");
         }
     }
 }

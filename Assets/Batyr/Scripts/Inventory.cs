@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Batyr.Scripts
 {
@@ -45,6 +46,13 @@ namespace Batyr.Scripts
         {
             artifacts.Add(artifact);
             SaveLoadSystem.Instance.Save(artifacts, "inventory");
+        }
+
+        public bool HasQuestArtifacts()
+        {
+            bool FirstAndSecondAndThird = HasArtifact(5000) && HasArtifact(5001) && HasArtifact(5002);
+            bool SixArtifactsOfFiveTier = artifacts.Where(i => i.Tier == 5).ToList().Count >= 6;
+            return FirstAndSecondAndThird || SixArtifactsOfFiveTier;
         }
     }
 }

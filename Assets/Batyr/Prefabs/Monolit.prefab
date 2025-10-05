@@ -11,17 +11,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 51d4ca59c7c915442913592ab366db3a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.18
+      value: -1.63
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 51d4ca59c7c915442913592ab366db3a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.13
+      value: 1.93
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 51d4ca59c7c915442913592ab366db3a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.22
+      value: 13.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 51d4ca59c7c915442913592ab366db3a,
         type: 3}
@@ -75,6 +75,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 9600694267885041}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 51d4ca59c7c915442913592ab366db3a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7706944599344222552}
   m_SourcePrefab: {fileID: 100100000, guid: 51d4ca59c7c915442913592ab366db3a, type: 3}
 --- !u!1 &1541189289246532116 stripped
 GameObject:
@@ -98,6 +102,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7eb8145e4b2dee941bf441daff1dcfca, type: 3}
   - {fileID: 8300000, guid: 63c774e4079537a4689d56cf7fd67e03, type: 3}
   - {fileID: 8300000, guid: 140e98c00c687dd4e84a980feece9af4, type: 3}
+  weaks:
+  - {fileID: 8300000, guid: 659ebb52faca245498b6d6a34dd66536, type: 3}
+  - {fileID: 8300000, guid: 5e9d48a45488570498759af5def38d07, type: 3}
+  - {fileID: 8300000, guid: e4ff726e66c1c6844966bf0a4692739a, type: 3}
+  final: {fileID: 8300000, guid: 4a599b398b60f0740b044e849a5c3214, type: 3}
 --- !u!82 &9600694267885041
 AudioSource:
   m_ObjectHideFlags: 0
@@ -119,7 +128,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 0
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 5
   MaxDistance: 50
   Pan2D: 0
   rolloffMode: 0
@@ -195,3 +204,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!64 &7706944599344222552
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541189289246532116}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 170490110152370834, guid: 51d4ca59c7c915442913592ab366db3a, type: 3}
