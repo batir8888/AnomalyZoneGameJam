@@ -2,6 +2,7 @@ using Batyr.Scripts;
 using UnityEngine;
 using UnityEngine.VFX;
 using System.Collections.Generic;
+using StarterAssets;
 
 public class VacuumMachine : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class VacuumMachine : MonoBehaviour
     private VisualEffect _vfx;
     private CompasUI _compassUI;
     private Light _light;
+    private FirstPersonController _controller;
 
     // Настройки из инспектора
     [Header("Settings")]
@@ -31,7 +33,7 @@ public class VacuumMachine : MonoBehaviour
     private void Start()
     {
         var magnetVfx = GetComponentInChildren<MagnetVfx>();
-        if (magnetVfx != null)
+        if (magnetVfx)
         {
             _vfx = magnetVfx.Vfx;
         }
@@ -39,6 +41,7 @@ public class VacuumMachine : MonoBehaviour
         {
             Debug.LogWarning("MagnetVfx component not found on child.", gameObject);
         }
+        
     }
 
     private void Update()

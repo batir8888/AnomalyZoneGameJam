@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Batyr.Scripts;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -19,10 +20,6 @@ public class EquipUI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnDestroy()
     {
@@ -38,7 +35,21 @@ public class EquipUI : MonoBehaviour
 
     public void Equip()
     {
-        ResultText.text = "Ты  дешовка!";
+        var data = Inventory.Instance.GetDataById(ID1);
+        ResultText.text = $"Set bonus {data.Bonus} +{data.BonusValue}%!";
+        var equipData = new EquipData(data.Bonus, data.BonusValue);
+        
+    }
+}
 
+public struct EquipData
+{
+    BonusType bonusType;
+    int bonusValue;
+
+    public EquipData(BonusType bonusType, int bonusValue)
+    {
+        this.bonusType = bonusType;
+        this.bonusValue = bonusValue;
     }
 }
