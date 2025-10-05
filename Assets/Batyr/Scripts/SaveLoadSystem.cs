@@ -42,5 +42,29 @@ namespace Batyr.Scripts
 
             return Path.Combine(Application.persistentDataPath, fileName);
         }
+        
+        // Удаление файла сохранения
+        public bool Delete(string fileName)
+        {
+            string path = GetSavePath(fileName);
+
+            if (File.Exists(path))
+            {
+                try
+                {
+                    File.Delete(path);
+                    Debug.Log($"Deleted file: {path}");
+                    return true;
+                }
+                catch (System.Exception e)
+                {
+                    Debug.LogError($"Error deleting file: {e.Message}");
+                    return false;
+                }
+            }
+
+            Debug.LogWarning($"File not found: {path}");
+            return false;
+        }
     }
 }

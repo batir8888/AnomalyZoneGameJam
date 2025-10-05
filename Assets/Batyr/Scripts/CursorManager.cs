@@ -18,9 +18,9 @@ namespace Batyr.Scripts
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Ray ray = _mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
-                if (Physics.Raycast(ray, out RaycastHit hit))
+                if (Physics.Raycast(ray, out RaycastHit hit, maxDistance: 2f))
                 {
-                    if (hit.collider.TryGetComponent(out Terminal terminal))
+                    if (hit.collider.TryGetComponent(out Terminal _))
                     {
                         _starterAssetsInputs.cursorLocked = false;
                         _starterAssetsInputs.cursorInputForLook = false;

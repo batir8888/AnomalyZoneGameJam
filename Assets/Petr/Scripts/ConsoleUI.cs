@@ -1,3 +1,4 @@
+using Batyr.Scripts;
 using UnityEngine;
 
 public class ConsoleUI : MonoBehaviour
@@ -6,6 +7,7 @@ public class ConsoleUI : MonoBehaviour
     [SerializeField] GameObject ListPanel;
     [SerializeField] GameObject CraftPanel;
     [SerializeField] GameObject EquipPanel;
+    [SerializeField] ListUI ListUI;
 
     bool l, c, e;
 
@@ -34,6 +36,8 @@ public class ConsoleUI : MonoBehaviour
         else
         {
             l = true;
+            Debug.Log(Inventory.Instance);
+            ListUI.UpdateList(Inventory.Instance.artifacts);
             ListPanel.SetActive(true);
             Panel.SetActive(false);
         }

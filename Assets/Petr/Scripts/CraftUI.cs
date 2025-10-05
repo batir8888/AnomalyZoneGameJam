@@ -90,7 +90,7 @@ public class CraftUI : MonoBehaviour
             yield return new WaitForSeconds(loadingDelay);
             
             // Уничтожаем загрузку
-            if (loadingObj != null)
+            if (loadingObj)
             {
                 Destroy(loadingObj);
             }

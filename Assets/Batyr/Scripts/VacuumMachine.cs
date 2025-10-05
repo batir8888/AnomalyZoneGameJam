@@ -2,8 +2,6 @@ using Batyr.Scripts;
 using UnityEngine;
 using UnityEngine.VFX;
 using System.Collections.Generic;
-using StarterAssets;
-using UnityEngine.UI;
 
 public class VacuumMachine : MonoBehaviour
 {
@@ -48,6 +46,7 @@ public class VacuumMachine : MonoBehaviour
 
     private void Update()
     {
+        UpdateClosestArtifact();
         if (Input.GetMouseButtonDown(0) && _vfx)
         {
             _vfx.Play();

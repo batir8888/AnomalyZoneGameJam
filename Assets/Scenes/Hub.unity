@@ -2201,6 +2201,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e1c1dbfc0726b645a6179b86947981d, type: 3}
+--- !u!114 &1116009907 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3625058392709279618, guid: cd0f95b1dbf11394b81a1bb1f98d4a94,
+    type: 3}
+  m_PrefabInstance: {fileID: 1279826999}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09989ec531a3c294d8d04c11b14154ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1139538531
 GameObject:
   m_ObjectHideFlags: 0
@@ -2708,6 +2720,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3440715175667632190, guid: cd0f95b1dbf11394b81a1bb1f98d4a94,
+        type: 3}
+      propertyPath: ListUI
+      value: 
+      objectReference: {fileID: 1116009907}
     - target: {fileID: 3502147026656886115, guid: cd0f95b1dbf11394b81a1bb1f98d4a94,
         type: 3}
       propertyPath: craftButton
@@ -2822,6 +2839,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: ESC_to_exit///
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636310677576267927, guid: cd0f95b1dbf11394b81a1bb1f98d4a94,
+        type: 3}
+      propertyPath: m_text
+      value: '[ID]  Tier  Name'
       objectReference: {fileID: 0}
     - target: {fileID: 7636310677576267927, guid: cd0f95b1dbf11394b81a1bb1f98d4a94,
         type: 3}

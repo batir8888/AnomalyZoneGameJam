@@ -16,5 +16,5 @@ public struct ArtifactData
     public bool CanBeCombined;  // = false для Tier 5
 
     public override string ToString() =>
-        $"Tier{Tier} LocalId={LocalId} Select={Select} {Bonus}+{BonusValue}";
+        $"{Id}   {Tier}    {Select}";
 }
