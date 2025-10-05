@@ -34,7 +34,7 @@ public class CraftCapsule : MonoBehaviour
             // Проверка на случай, если рецепт не найден
             if (localIdOfNewArtifact == -1 || localIdOfNewArtifact >= artifactList.Count)
             {
-                artifact = null;
+                artifact = default;
                 return false;
             }
 
@@ -44,7 +44,7 @@ public class CraftCapsule : MonoBehaviour
             return true;
         }
 
-        artifact = null;
+        artifact = default;
         return false;
     }
 
