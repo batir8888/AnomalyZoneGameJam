@@ -2407,6 +2407,11 @@ PrefabInstance:
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 424321991775115797, guid: cd0f95b1dbf11394b81a1bb1f98d4a94,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 549516245693611738, guid: cd0f95b1dbf11394b81a1bb1f98d4a94,
         type: 3}
       propertyPath: m_RaycastTarget
@@ -2492,6 +2497,21 @@ PrefabInstance:
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3388357670334577561, guid: cd0f95b1dbf11394b81a1bb1f98d4a94,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0166
+      objectReference: {fileID: 0}
+    - target: {fileID: 3388357670334577561, guid: cd0f95b1dbf11394b81a1bb1f98d4a94,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0147
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434262243193587666, guid: cd0f95b1dbf11394b81a1bb1f98d4a94,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3981848218256872738, guid: cd0f95b1dbf11394b81a1bb1f98d4a94,
         type: 3}
       propertyPath: m_RaycastTarget
@@ -2557,6 +2577,21 @@ PrefabInstance:
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6152969979820018185, guid: cd0f95b1dbf11394b81a1bb1f98d4a94,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152969979820018185, guid: cd0f95b1dbf11394b81a1bb1f98d4a94,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0429
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152969979820018185, guid: cd0f95b1dbf11394b81a1bb1f98d4a94,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.037
+      objectReference: {fileID: 0}
     - target: {fileID: 6258319564946800728, guid: cd0f95b1dbf11394b81a1bb1f98d4a94,
         type: 3}
       propertyPath: m_margin.w
@@ -2582,6 +2617,11 @@ PrefabInstance:
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6290362185919546694, guid: cd0f95b1dbf11394b81a1bb1f98d4a94,
+        type: 3}
+      propertyPath: m_text
+      value: ESC_to_exit///
+      objectReference: {fileID: 0}
     - target: {fileID: 7636310677576267927, guid: cd0f95b1dbf11394b81a1bb1f98d4a94,
         type: 3}
       propertyPath: m_RaycastTarget
@@ -2590,6 +2630,11 @@ PrefabInstance:
     - target: {fileID: 7976519058638665848, guid: cd0f95b1dbf11394b81a1bb1f98d4a94,
         type: 3}
       propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146338206297122135, guid: cd0f95b1dbf11394b81a1bb1f98d4a94,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8523928539638008857, guid: cd0f95b1dbf11394b81a1bb1f98d4a94,
