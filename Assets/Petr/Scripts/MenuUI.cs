@@ -46,7 +46,7 @@ public class MenuUI : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Hub");
     }
 
     public void SettingsON()
