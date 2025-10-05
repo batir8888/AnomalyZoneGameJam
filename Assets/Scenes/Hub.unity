@@ -2885,6 +2885,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2888467162528709211, guid: ab13d4a5457bf0e4fb64ec4bec82d1a6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4070813813942782376, guid: ab13d4a5457bf0e4fb64ec4bec82d1a6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2939,6 +2944,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerCapsule
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536135314809494025, guid: ab13d4a5457bf0e4fb64ec4bec82d1a6,
+        type: 3}
+      propertyPath: m_text
+      value: --:--
       objectReference: {fileID: 0}
     - target: {fileID: 6399791730798510181, guid: ab13d4a5457bf0e4fb64ec4bec82d1a6,
         type: 3}

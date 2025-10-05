@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Door : MonoBehaviour
 {
@@ -29,6 +31,7 @@ public class Door : MonoBehaviour
         if (playerInside && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Успех! Клавиша E нажата в триггерной зоне.");
+            SceneManager.LoadScene("MainScene1");
         }
     }
 }
