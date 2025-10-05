@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.VFX;
 using System.Collections.Generic;
 using StarterAssets;
+using UnityEngine.UI;
 
 public class VacuumMachine : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class VacuumMachine : MonoBehaviour
     private VisualEffect _vfx;
     private CompasUI _compassUI;
     private Light _light;
-    private FirstPersonController _controller;
+    private TankUI _slider;
 
     // Настройки из инспектора
     [Header("Settings")]
@@ -28,6 +29,7 @@ public class VacuumMachine : MonoBehaviour
     {
         _compassUI = GetComponentInChildren<CompasUI>();
         _light = GetComponentInChildren<Light>();
+        _slider = GetComponentInChildren<TankUI>();
     }
 
     private void Start()
@@ -85,6 +87,7 @@ public class VacuumMachine : MonoBehaviour
             if (direction.magnitude < radiusToTake)
             {
                 artifact.TakeToInventory();
+                _slider.UpdateSlider();
                 collider.gameObject.SetActive(false);
             }
         }
