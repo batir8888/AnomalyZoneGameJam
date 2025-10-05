@@ -17,7 +17,7 @@ public class Monolith : MonoBehaviour
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
-        _camera = Camera.main;
+        _camera = FindObjectOfType<Camera>();
     }
 
     private void Start()
