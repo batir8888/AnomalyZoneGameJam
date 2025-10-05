@@ -316,6 +316,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1303184336496009589, guid: c7b822b266bafe741875d61da580ad18,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2193100294469805422, guid: c7b822b266bafe741875d61da580ad18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -366,12 +371,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2224111308254190944, guid: c7b822b266bafe741875d61da580ad18,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4013280136008558062, guid: c7b822b266bafe741875d61da580ad18,
         type: 3}
       propertyPath: m_Name
       value: Monitorchik
       objectReference: {fileID: 0}
-    - target: {fileID: 4013280136008558062, guid: c7b822b266bafe741875d61da580ad18,
+    - target: {fileID: 5188737910545473020, guid: c7b822b266bafe741875d61da580ad18,
+        type: 3}
+      propertyPath: m_text
+      value: '[SFX]
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080369184538477168, guid: c7b822b266bafe741875d61da580ad18,
+        type: 3}
+      propertyPath: audioMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: b34c8133e1a805746b0e1777d6db93cd,
+        type: 2}
+    - target: {fileID: 6368337435807913073, guid: c7b822b266bafe741875d61da580ad18,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -708,6 +731,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 8291164102321524715, guid: 809f93689e85ff848a7923b0e13c1ca8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
