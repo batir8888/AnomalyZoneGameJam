@@ -15,6 +15,11 @@ namespace Batyr.Scripts
             _rb = GetComponent<Rigidbody>();
         }
 
+        public void SetData(ArtifactData data)
+        {
+            Data = data;
+        }
+
         public void TakeToInventory()
         {
             Inventory.Instance.artifacts.Add(Data);

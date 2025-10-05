@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class ArtifactData
+public struct ArtifactData
 {
     public int Id;          // глобальный id = Tier*1000 + LocalId
     public int Tier;        // ранг
