@@ -89,6 +89,8 @@ public class ArtifactSpawner : MonoBehaviour
         }
         
         artifact.SetData(data);
+        
+        Debug.Log("Артефакт успешкно заспавнен");
     }
     
     // Fisher-Yates shuffle
