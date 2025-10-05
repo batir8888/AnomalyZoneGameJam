@@ -43,6 +43,7 @@ public class VacuumMachine : MonoBehaviour
         {
             Debug.LogWarning("MagnetVfx component not found on child.", gameObject);
         }
+        
     }
 
     private void Update()
