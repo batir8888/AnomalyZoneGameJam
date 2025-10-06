@@ -136,8 +136,7 @@ public class CraftUI : MonoBehaviour
             {
                 message = "<color=green>Успех!</color>\n" +
                           $"Tier: {artifact.Tier}\n" +
-                          $"ID: {artifact.Id}\n" +
-                          $"Бонус: {artifact.Bonus} +{artifact.BonusValue}";
+                          $"ID: {artifact.Id}\n";
                 color = Color.green;
             }
             

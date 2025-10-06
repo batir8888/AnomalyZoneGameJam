@@ -684,6 +684,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2432025689808041427, guid: 11f7f892b732ff546877bf2e52a41801,
+        type: 3}
+      propertyPath: attractorRadius
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3766845607562094417, guid: 11f7f892b732ff546877bf2e52a41801,
         type: 3}
       propertyPath: MinDistance

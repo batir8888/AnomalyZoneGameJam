@@ -40,12 +40,12 @@ public class MenuUI : MonoBehaviour
     {
         countMaster.text = Master.ToString();
         countMusic.text = Music.ToString();
-
-
     }
 
     public void Play()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         SceneManager.LoadScene("Hub");
     }
 

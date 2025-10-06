@@ -51,6 +51,7 @@ public class VacuumMachine : MonoBehaviour
 
     private void Update()
     {
+        FindNearbyArtifacts();
         UpdateClosestArtifact();
         if (Input.GetMouseButtonDown(0) && _vfx)
         {

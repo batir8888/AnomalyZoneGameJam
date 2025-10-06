@@ -66,5 +66,29 @@ namespace Batyr.Scripts
             Debug.LogWarning($"File not found: {path}");
             return false;
         }
+        
+        public void DeleteAll()
+        {
+            try
+            {
+                string[] files = Directory.GetFiles(Application.persistentDataPath, "*.json");
+                foreach (string file in files)
+                {
+                    File.Delete(file);
+                    Debug.Log($"Deleted: {file}");
+                }
+                Debug.Log($"Deleted {files.Length} save files");
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError($"Error deleting files: {e.Message}");
+            }
+        }
+        
+        public bool HasSave(string fileName)
+        {
+            string path = GetSavePath(fileName);
+            return File.Exists(path);
+        }
     }
 }

@@ -51,7 +51,8 @@ public class Monolith : MonoBehaviour
         _audioSource.PlayOneShot(final);
         yield return new WaitForSeconds(final.length);
         Inventory.Instance.artifacts.Clear();
-        SaveLoadSystem.Instance.Delete("inventory");
+        SaveLoadSystem.Instance.DeleteAll();
+        CraftBootstrap.Instance.Regenerate();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         SceneManager.LoadScene("Petr");
